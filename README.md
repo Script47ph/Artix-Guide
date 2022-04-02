@@ -156,7 +156,7 @@ Installation guide for Artix Openrc with logical volume manager. This guide use 
 - Install dependencies
     
     ```
-    pacman -S device-mapper-openrc lvm2-openrc grub os-prober efibootmgr openssh openssh-openrc dhclient
+    pacman -S device-mapper-openrc lvm2-openrc grub os-prober efibootmgr openssh openssh-openrc dhcpcd
     ```
 - Install grub
 
@@ -195,22 +195,22 @@ Installation guide for Artix Openrc with logical volume manager. This guide use 
     ```
 - Set networking
 
-    Get the exact name of your interface
+    Get the exact your interface
     ```
     ip -s link
     ```
-    Add config to /etc/conf.d/net | replace "your-interface" name with your real interface name
+    Add config to /etc/conf.d/net | replace "eth0" with your real interface
 
     ```
-    echo 'config_your-interface="dhcp"' >> /etc/conf.d/net
+    sed -i 's/#config_eth0="192.168.0.2/24"/config_eth0="dhcp"/' /etc/conf.d/net
     ```
     Create symlink to openrc init
     ```
-    ln -s /etc/init.d/net.lo /etc/init.d/net.your-interface
+    ln -s /etc/init.d/net.lo /etc/init.d/net.eth0
     ```
     Activate networking services
     ```
-    rc-update add net.your-interface default
+    rc-update add net.eth0 boot
     ```
 - Exit chroot, add fstab, unmount and reboot if you want to use the new system.
     ```

@@ -202,7 +202,7 @@ Installation guide for Artix Openrc with logical volume manager. This guide use 
     Add config to /etc/conf.d/net | replace "your-interface" name with your real interface name
 
     ```
-    echo 'config_your-interface=( "dhcp" )' >> /etc/conf.d/net
+    echo 'config_your-interface="dhcp"' >> /etc/conf.d/net
     ```
     Create symlink to openrc init
     ```

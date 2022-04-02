@@ -89,7 +89,7 @@ Installation guide for Artix Openrc with logical volume manager. This guide use 
 - Create boot directory.
 
     ```
-    mkdir /mnt/boot/efi
+    mkdir -p /mnt/boot/efi
     ```
 - Mount EFI partition with mount.
 

@@ -212,9 +212,10 @@ Installation guide for Artix Openrc with logical volume manager. This guide use 
     ```
     rc-update add net.your-interface default
     ```
-- Exit chroot, unmount and reboot if you want to use the new system.
+- Exit chroot, add fstab, unmount and reboot if you want to use the new system.
     ```
     exit
+    fstabgen -U /mnt >> /mnt/etc/fstab
     umount -R /mnt
     reboot
     ```

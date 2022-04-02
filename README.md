@@ -149,7 +149,7 @@ Installation guide for Artix Openrc with logical volume manager. This guide use 
     ```
     nano /etc/mkinitcpio.conf
     ```
-    insert lvm2 and resume options manually to the following places between block and filesystems
+    insert "lvm2" and "resume" options manually to the following places between block and filesystems
 
     > HOOKS="base udev autodetect modconf block keyboard keymap lvm2 resume filesystems fsck"
 

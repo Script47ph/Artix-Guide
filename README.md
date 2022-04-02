@@ -188,7 +188,7 @@ Installation guide for Artix Openrc with logical volume manager. This guide use 
 - Set the hostname and hosts
     ```
     echo 'yourhostname' > /etc/hostname
-    echo 'hostname='yourhostname'' >> /etc/conf.d/hostname
+    echo 'hostname="yourhostname"' > /etc/conf.d/hostname
     echo '127.0.0.1 localhost' >> /etc/hosts
     echo '::1 localhost' >> /etc/hosts
     echo '127.0.1.1 yourhostname.localdomain  yourhostname' >> /etc/hosts

@@ -199,7 +199,7 @@ Installation guide for Artix Openrc with logical volume manager. This guide use 
     ```
     ip -s link
     ```
-    Uncomment config_eth0 in /etc/conf.d/net | replace second "eth0" with your real interface
+    Change modules_eth0 to config_eth0 in /etc/conf.d/net | replace "eth0" on config_eth0 with your real interface
     ```
     sed -i 's/#modules_eth0="udhcpc"/config_eth0="dhcp"/' /etc/conf.d/net
     ```

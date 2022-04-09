@@ -201,7 +201,7 @@ Installation guide for Artix Openrc with logical volume manager. This guide use 
     ```
     Uncomment config_eth0 in /etc/conf.d/net | replace second "eth0" with your real interface
     ```
-    sed -i 's/#config_eth0="192.168.0.2/24"/config_eth0="dhcp"/' /etc/conf.d/net
+    sed -i 's/#modules_eth0="udhcpc"/config_eth0="dhcp"/' /etc/conf.d/net
     ```
     Create symlink to openrc init
     ```

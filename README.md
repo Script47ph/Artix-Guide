@@ -136,7 +136,7 @@ Installation guide for Artix Openrc with logical volume manager. This guide use 
     Install a text editor of your choice (let's use nano here) and edit /etc/locale.gen, uncommenting the locales you desire
 
     ```
-    pacman -S nano -y \
+    pacman -S nano \
     && nano /etc/locale.gen
     ```
     Generate your desired locales running
@@ -171,9 +171,9 @@ Installation guide for Artix Openrc with logical volume manager. This guide use 
 - Activate services
     
     ```
-    rc-update add device-mapper boot
-    rc-update add lvm boot
-    rc-update add sshd default
+    rc-update add device-mapper boot \
+    && rc-update add lvm boot \
+    && rc-update add sshd default
     ```
 - Set the root passwd
     
@@ -187,11 +187,11 @@ Installation guide for Artix Openrc with logical volume manager. This guide use 
     ```
 - Set the hostname and hosts
     ```
-    echo 'yourhostname' > /etc/hostname
-    echo 'hostname="yourhostname"' > /etc/conf.d/hostname
-    echo '127.0.0.1 localhost' >> /etc/hosts
-    echo '::1 localhost' >> /etc/hosts
-    echo '127.0.1.1 yourhostname.localdomain  yourhostname' >> /etc/hosts
+    echo 'yourhostname' > /etc/hostname \
+    && echo 'hostname="yourhostname"' > /etc/conf.d/hostname \
+    && echo '127.0.0.1 localhost' >> /etc/hosts \
+    && echo '::1 localhost' >> /etc/hosts \
+    && echo '127.0.1.1 yourhostname.localdomain  yourhostname' >> /etc/hosts
     ```
 - Set networking
 

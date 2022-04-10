@@ -136,7 +136,7 @@ Installation guide for Artix Openrc with logical volume manager. This guide use 
     Install a text editor of your choice (let's use nano here) and edit /etc/locale.gen, uncommenting the locales you desire
 
     ```
-    pacman -S nano
+    pacman -S nano -y \
     nano /etc/locale.gen
     ```
     Generate your desired locales running
